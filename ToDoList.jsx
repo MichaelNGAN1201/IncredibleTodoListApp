@@ -18,12 +18,14 @@ const ToDoList = ({ tasks }) => {
 
 const styles = StyleSheet.create({
   task: {
-    padding: 10,
+    padding: 16,
     borderBottomWidth: 1,
     borderColor: '#ccc',
+    backgroundColor: '#fff',
   },
   taskText: {
     fontSize: 16,
+    color: '#333',
   },
 });
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TextInput, Button, StyleSheet } from 'react-native';
+import { View, TextInput, Pressable, Text, StyleSheet } from 'react-native';
 
 const ToDoForm = ({ handleTaskInput, addTask, newTask }) => {
   return (
@@ -10,7 +10,9 @@ const ToDoForm = ({ handleTaskInput, addTask, newTask }) => {
         value={newTask}
         onChangeText={handleTaskInput}
       />
-      <Button title="Add" onPress={addTask} />
+      <Pressable style={styles.addButton} onPress={addTask}>
+        <Text style={styles.addButtonText}>Add</Text>
+      </Pressable>
     </View>
   );
 };
@@ -28,8 +30,19 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#ccc',
     paddingHorizontal: 10,
-    paddingVertical: 5,
+    paddingVertical: 8,
     marginRight: 10,
+    borderRadius: 8,
+  },
+  addButton: {
+    backgroundColor: '#4CAF50',
+    padding: 10,
+    borderRadius: 8,
+  },
+  addButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
 

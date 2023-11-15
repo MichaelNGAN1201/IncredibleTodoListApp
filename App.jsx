@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SafeAreaView, StyleSheet } from 'react-native';
+import { SafeAreaView, StyleSheet, Alert } from 'react-native';
 import ToDoList from './ToDoList';
 import ToDoForm from './ToDoForm';
 
@@ -12,11 +12,13 @@ const App = () => {
   const [newTask, setNewTask] = useState('');
 
   const addTask = () => {
-    if (newTask) {
-      const updatedTasks = [...tasks, newTask]; 
-      console.log("Updated tasks:", updatedTasks); 
-      setTasks(updatedTasks); 
-      setNewTask(''); 
+    if (newTask && !tasks.includes(newTask)) {
+      const updatedTasks = [...tasks, newTask];
+      console.log("Updated tasks:", updatedTasks);
+      setTasks(updatedTasks);
+      setNewTask('');
+    } else {
+      Alert.alert('Duplicate Task', 'Please enter a unique task.', [{ text: 'OK' }]);
     }
   };
 
