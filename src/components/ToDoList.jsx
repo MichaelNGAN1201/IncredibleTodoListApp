@@ -3,7 +3,7 @@ import { ScrollView, View, Text, Pressable, StyleSheet } from 'react-native';
 
 const ToDoList = ({ tasks }) => {
   return (
-    <ScrollView>
+    <ScrollView keyboardShouldPersistTaps="handled">
       {tasks &&
         tasks.map((task, index) => (
           <Pressable key={index} onPress={() => console.log('Task completed:', task)}>

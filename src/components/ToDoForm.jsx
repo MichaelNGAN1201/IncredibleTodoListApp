@@ -9,6 +9,7 @@ const ToDoForm = ({ handleTaskInput, addTask, newTask }) => {
         placeholder="Add a new task..."
         value={newTask}
         onChangeText={handleTaskInput}
+        keyboardShouldPersistTaps="handled" 
       />
       <Pressable style={styles.addButton} onPress={addTask}>
         <Text style={styles.addButtonText}>Add</Text>
@@ -47,3 +48,5 @@ const styles = StyleSheet.create({
 });
 
 export default ToDoForm;
+
+
